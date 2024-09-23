@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <script>
+        function play(choice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            if (choice === computerChoice) {
+                alert('Draw!');
+            } else if ((choice === 'rock' && computerChoice === 'scissors') ||
+                       (choice === 'paper' && computerChoice === 'rock') ||
+                       (choice === 'scissors' && computerChoice === 'paper')) {
+                alert('You win!');
+            } else {
+                alert('You lose!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Rock-Paper-Scissors</h1>
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissors')">Scissors</button>
+    <a href="../index.html">Back to MegaGames</a>
+</body>
+</html>
