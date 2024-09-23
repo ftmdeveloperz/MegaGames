@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <script>
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        function checkGuess() {
+            const guess = document.getElementById('guess').value;
+            if (guess == randomNumber) {
+                alert('Correct! The number was ' + randomNumber);
+            } else {
+                alert('Wrong! Try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Guess the Number (1-10)</h1>
+    <input type="number" id="guess" placeholder="Your guess">
+    <button onclick="checkGuess()">Submit</button>
+    <a href="../index.html">Back to MegaGames</a>
+</body>
+</html>
