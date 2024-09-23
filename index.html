@@ -24,9 +24,21 @@
         </ul>
     </div>
        <h2>Play & Enjoy!</h2>
-    <script src="script.js"></script>
+    
     <footer>
-        &copy; 2024 MegaGames. All Rights Reserved.
+        <p>&copy; 2024 MegaGames. All Rights Reserved.</p>
+        <p id="datetime"></p>
     </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            document.getElementById('datetime').innerText = now.toLocaleString('en-US', options);
+        }
+        setInterval(updateTime, 1000);
+        updateTime(); // Call once to set initial time
+    </script>
 </body>
 </html>
