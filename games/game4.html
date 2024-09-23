@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Guessing Game</title>
+    <script>
+        function checkColor() {
+            const color = document.getElementById('color').value.toLowerCase();
+            if (color === 'red') {
+                alert('Correct! It is red.');
+            } else {
+                alert('Try again!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Guess the Color (Red)</h1>
+    <input type="text" id="color" placeholder="Enter color">
+    <button onclick="checkColor()">Check</button>
+    <a href="../index.html">Back to MegaGames</a>
+</body>
+</html>
