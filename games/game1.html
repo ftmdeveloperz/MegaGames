@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <script>
+        let score = 0;
+        function incrementScore() {
+            score++;
+            document.getElementById('score').innerText = score;
+        }
+    </script>
+</head>
+<body>
+    <h1>Click the Button!</h1>
+    <button onclick="incrementScore()">Click Me!</button>
+    <p>Your Score: <span id="score">0</span></p>
+    <a href="../index.html">Back to MegaGames</a>
+</body>
+</html>
