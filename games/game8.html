@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        .grid { display: grid; grid-template-columns: repeat(4, 100px); gap: 5px; }
+        .card { width: 100px; height: 100px; background: #ccc; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; }
+    </style>
+    <script>
+        const cards = ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D'];
+        let flippedCards = [];
+        let matchedCards = 0;
+
+        function shuffle(array) {
+            array.sort(() => Math.random() - 0.5);
+        }
+
+        function flipCard(index) {
+            const card = document.getElementById('card' + index);
+            card.innerText = cards[index];
+            flippedCards.push(index);
+
+            if (flippedCards.length === 2) {
+                setTimeout(checkMatch, 1000);
+            }
+        }
+
+        function checkMatch() {
+            const [first, second] = flippedCards;
+            if (cards[first] === cards[second]) {
+                matchedCards += 2;
+            } else {
+                document.getElementById('card' + first).innerText = '';
+                document.getElementById('card' + second).innerText = '';
+            }
+            flippedCards = [];
+
+            if (matchedCards === cards.length) {
+                alert('You won!');
+                resetGame();
+            }
+        }
+
+        function resetGame() {
+            matchedCards = 0;
+            flippedCards = [];
+            shuffle(cards);
+            for (let i = 0; i < cards.length; i++) {
+                document.getElementById('card' + i).innerText = '';
+            }
+        }
+
+        window.onload = function() {
+            shuffle(cards);
+        };
+    </script>
+</head>
+<body>
+    <h1>Memory Game</h1>
+    <div class="grid">
+        <div id="card0" class="card" onclick="flipCard(0)"></div>
+        <div id="card1" class="card" onclick="flipCard(1)"></div>
+        <div id="card2" class="card" onclick="flipCard(2)"></div>
+        <div id="card3" class="card" onclick="flipCard(3)"></div>
+        <div id="card4" class="card" onclick="flipCard(4)"></div>
+        <div id="card5" class="card" onclick="flipCard(5)"></div>
+        <div id="card6" class="card" onclick="flipCard(6)"></div>
+        <div id="card7" class="card" onclick="flipCard(7)"></div>
+    </div>
+    <a href="../index.html">Back to MegaGames</a>
+</body>
+</html>
