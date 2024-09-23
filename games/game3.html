@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Math Quiz</title>
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value;
+            if (answer == 4) {
+                alert('Correct!');
+            } else {
+                alert('Wrong! Try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>What is 2 + 2?</h1>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <a href="../index.html">Back to MegaGames</a>
+</body>
+</html>
